@@ -33,7 +33,8 @@ namespace Lumen_Visual
         public Connection()
         {
             ConnectionFactory factory = new ConnectionFactory(); //setting konek antara rabbitMQ dan program
-            factory.Uri = "amqp://lumen:lumen@169.254.18.223/%2F"; //memasukkan IP
+            //factory.Uri = "amqp://lumen:lumen@169.254.18.223/%2F"; //memasukkan IP
+            factory.Uri = "amqp://localhost/%2F"; //memasukkan IP
             IConnection connection = factory.CreateConnection(); //menyatukan koneksi nya
             IModel channel = connection.CreateModel(); //buat channel baru lagi
             channelSend = connection.CreateModel(); //buat saluran jalannya untuk mengirim
