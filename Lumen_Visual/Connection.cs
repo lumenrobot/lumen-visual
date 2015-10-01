@@ -53,7 +53,7 @@ namespace Lumen_Visual
             channelReceive.QueueBind(queueRec.QueueName, "amq.topic", "lumen.visual.command");
             consumerReceive = new EventingBasicConsumer(channelReceive);
             channelReceive.BasicConsume(queueRec.QueueName, true, consumerReceive);
-            consumerReceive.Received+=new BasicDeliverEventHandler(consumerReceive_Received);
+            consumerReceive.Received += new EventHandler<BasicDeliverEventArgs>(consumerReceive_Received);
             Thread QueryTrhead = new Thread(QueryImage);
             QueryTrhead.Start();
             MessageBox.Show("connected to server");
