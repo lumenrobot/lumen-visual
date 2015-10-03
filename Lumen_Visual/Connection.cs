@@ -39,7 +39,7 @@ namespace Lumen_Visual
             IModel channel = connection.CreateModel(); //buat channel baru lagi
             channelSend = connection.CreateModel(); //buat saluran jalannya untuk mengirim
             channelReceive = connection.CreateModel();
-            string routing = "avatar.NAO.data.image"; //sebagai pengarah tujuan
+            string routing = "avatar.nao1.camera.main"; //sebagai pengarah tujuan
             var arg = new Dictionary<string, object>
             {
                 {"x-message-ttl",50}
