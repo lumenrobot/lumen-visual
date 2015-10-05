@@ -25,6 +25,9 @@ namespace Lumen_Visual
 {
     public partial class CameraCapture : Form
     {
+        public const int RESIZE_WIDTH = 640;
+        public const int RESIZE_HEIGHT = 480;
+
         public Capture capture; //ambil gambar dari kamera        
         private bool captureInProgress; //mengecek apakah gambar telah di ambil        
         bool ready = false;
@@ -104,7 +107,8 @@ namespace Lumen_Visual
                 }
                 #endregion
 
-                camImageBox.Image = ImageFrame.Resize(800, 600, Emgu.CV.CvEnum.INTER.CV_INTER_LINEAR, true);
+                camImageBox.Image = ImageFrame.Resize(RESIZE_WIDTH, RESIZE_HEIGHT, 
+                    Emgu.CV.CvEnum.INTER.CV_INTER_LINEAR, true);
             }
 
         }
@@ -162,7 +166,8 @@ namespace Lumen_Visual
                 }
                 #endregion
 
-                camImageBox.Image = ImageFrame.Resize(800, 600, Emgu.CV.CvEnum.INTER.CV_INTER_LINEAR, true);
+                camImageBox.Image = ImageFrame.Resize(RESIZE_WIDTH, RESIZE_HEIGHT, 
+                    Emgu.CV.CvEnum.INTER.CV_INTER_LINEAR, true);
             }
         }
 
